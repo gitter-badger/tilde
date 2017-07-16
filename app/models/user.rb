@@ -94,7 +94,7 @@ class User < ApplicationRecord
 
     if user.valid?
       user.build_profile(avatar_from_slack: user_info['user']['profile']['image_original'],
-                         biography: user_info['user']['profile']['title'])
+                         title: user_info['user']['profile']['title'])
     end
 
     user

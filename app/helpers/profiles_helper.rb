@@ -22,4 +22,12 @@ module ProfilesHelper
       profile.biography.html_safe
     end
   end
+
+  def title(profile)
+    if profile.title.blank?
+      "<strong>Add your title</strong>".html_safe
+    else
+      profile.title.html_safe
+    end
+  end
 end

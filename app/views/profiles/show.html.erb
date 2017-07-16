@@ -1,192 +1,104 @@
-<!-- Content
-============================================= -->
-<section id="content">
 
-  <div class="content-wrap">
+		<!-- Content
+		============================================= -->
+		<section id="content">
 
-    <div class="container clearfix">
+			<div class="content-wrap">
 
-      <div class="row clearfix">
+				<div class="container clearfix">
 
-        <div class="col-sm-9">
+					<!-- Post Content
+					============================================= -->
+					<div class="postcontent nobottommargin col_last">
 
-          <div class="row clearfix">
-            <div class="col-md-2">
-              <%= image_tag(@profile.profile_picture, class: 'alignleft img-circle img-thumbnail notopmargin nobottommargin', style: 'max-width: 84px;') %>
-            </div>
+						<!-- Portfolio Filter
+						============================================= -->
+						<ul id="portfolio-filter" class="portfolio-filter clearfix" data-container="#portfolio">
 
-            <div class="col-sm-10">
-              <div class="heading-block noborder">
-                <h3><%= name(@profile) %></h3>
-                <span><%= biography(@profile) %></span>
-              </div>
-            </div>
-          </div>
+							<li class="activeFilter"><a href="#" data-filter="*">Overview</a></li>
+							<li><a href="#" data-filter=".pf-icons">Projects</a></li>
 
-          <div class="clear"></div>
+						</ul><!-- #portfolio-filter end -->
 
-          <div class="row clearfix">
+						<div class="clear"></div>
 
-            <div class="col-md-12">
+						<!-- Portfolio Items
+						============================================= -->
+						<!-- <div id="portfolio" class="portfolio grid-container portfolio-3 clearfix">
 
-              <div class="tabs tabs-bb clearfix ui-tabs ui-widget ui-widget-content ui-corner-all" id="tabs-profile">
+							<article class="portfolio-item pf-media pf-icons">
+								<div class="portfolio-image">
+									<a href="portfolio-single.html">
+										<img src="images/portfolio/3/1.jpg" alt="Open Imagination">
+									</a>
+									<div class="portfolio-overlay">
+										<a href="images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+									</div>
+								</div>
+								<div class="portfolio-desc">
+									<h3><a href="portfolio-single.html">Open Imagination</a></h3>
+									<span><a href="#">Media</a>, <a href="#">Icons</a></span>
+								</div>
+							</article>
 
-                <ul class="tab-nav clearfix">
-                  <li>
-                    <a href="#tab-account">
-                      <i class="icon-user2"></i>
-                      Account information</a>
-                  </li>
-                </ul>
+						</div><!-- #portfolio end -->
 
-                <div class="tab-container">
-                  <div class="tab-content clearfix" id="tab-account">
-                    <table class="table">
-                      <tr>
-                        <td>
-                          <%= fa_icon('link') %>
-                          menadevs.com/profiles/<%= nickname(@profile) %>
-                        </td>
+					</div><!-- .postcontent end -->
 
-                        <td>
-                          <%= fa_icon('envelope') %>
-                          <%= email(@profile) %>
-                        </td>
-                      </tr>
+					<!-- Sidebar
+					============================================= -->
+					<div class="sidebar nobottommargin">
+						<div class="sidebar-widgets-wrap">
 
-                      <tr>
-                        <td><%= fa_icon('globe') %>
-                          <%= @profile.location_name %></td>
-                        <td><%= fa_icon('clock-o') %>
-                          <%= @profile.user.time_zone %></td>
-                      </tr>
+							<div class="widget clearfix">
 
-                      <tr>
-                        <td>
-                          <% if @profile.receive_emails? %>
-                          <%= fa_icon("check") %>
-                        <% else %>
-                          <%= fa_icon("close") %>
-                          <% end %>
-                          <span>Receive updates via emails from MENAdevs?</span>
-                        </td>
+								<div id="team team-list">
+									<div class="clearfix alignleft">
+										<div>
+                      <%= image_tag(@profile.profile_picture, class: 'aligncenter img-square img-thumbnail notopmargin nobottommargin', style: 'max-width: 200px;') %>
+										</div>
 
-                        <td>
-                          <% if @profile.receive_job_alerts %>
-                          <%= fa_icon("check") %>
-                        <% else %>
-                          <%= fa_icon("close") %>
-                          <% end %>
-                          <span>Receive job alerts via emails?</span>
-                        </td>
-                      </tr>
+										<div class="team-desc" style="width: 200px; padding: 4px; text-align: left;">
+											<div class="team-title">
+                        <h4><%= name(@profile) %></h4>
+                        <span><%= title(@profile) %></span>
+                      </div>
 
-                      <tr>
-                        <td>
-                          <% if @profile.user.connected_via_slack? %>
-                          <%= fa_icon("check") %>
-                        <% else %>
-                          <%= fa_icon("close") %>
-                          <% end %>
-                          Logged in using Slack credentials?
-                        </td>
-                        <td>
-                          <% if @profile.privacy_level == 0 %>
-                          <%= fa_icon("eye-slash", text: "Your profile is hidden") %>
-                          <% elsif @profile.privacy_level == 1 %>
-                          <%= fa_icon("adjust", text: "Your profile visible to members only") %>
-                          <% elsif @profile.privacy_level == 2 %>
-                          <%= fa_icon("eye", text: "Your profile is public") %>
-                          <% end %>
-                        </td>
-                      </tr>
-                    </table>
+                      <div class="team-content">
+                        <%= biography(@profile) %>
+                      </div>
 
-                  </div>
-                </div>
+                      <!-- <br/>
 
-              </div>
+                      <div class="aligncenter">
+                        <a href="#" class="social-icon si-rounded si-small si-facebook">
+                          <i class="icon-facebook"></i>
+                          <i class="icon-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon si-rounded si-small si-twitter">
+                          <i class="icon-twitter"></i>
+                          <i class="icon-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon si-rounded si-small si-gplus">
+                          <i class="icon-gplus"></i>
+                          <i class="icon-gplus"></i>
+                        </a>
+                      </div> -->
+										</div>
+									</div>
 
-            </div>
+								</div>
 
-          </div>
+							</div>
 
-        </div>
+						</div>
+					</div><!-- .sidebar end -->
 
-        <div class="line visible-xs-block"></div>
+				</div>
 
-        <div class="col-sm-3 clearfix">
+			</div>
 
-          <div class="list-group">
-            <%= link_to directory_user_path(@profile.user), class: "list-group-item clearfix" do %>
-              Preview
-              <%= fa_icon("eye", class: "pull-right") %>
-            <% end %>
+		</section><!-- #content end -->
 
-            <%= link_to edit_user_profile_path(@profile.user), class: "list-group-item clearfix" do %>
-              Edit Profile
-              <%= fa_icon("user", class: "pull-right") %>
-            <% end %>
-
-            <%= link_to new_user_password_path(@profile.user), class: "list-group-item clearfix" do %>
-              Change Password
-              <%= fa_icon("laptop", class: "pull-right") %>
-            <% end %>
-
-            <a href="#" class="list-group-item clearfix">Profile privacy
-              <i class="icon-eye pull-right"></i>
-            </a>
-
-            <a href="#" class="list-group-item clearfix">Email preferences
-              <i class="icon-envelope2 pull-right"></i>
-            </a>
-          </div>
-
-        <!-- <div class="fancy-title topmargin title-border">
-            <h4>Social Profiles</h4>
-          </div>
-
-          <a href="#" class="social-icon si-facebook si-small si-rounded si-light" title="Facebook">
-            <i class="icon-facebook"></i>
-            <i class="icon-facebook"></i>
-          </a>
-
-          <a href="#" class="social-icon si-gplus si-small si-rounded si-light" title="Google+">
-            <i class="icon-gplus"></i>
-            <i class="icon-gplus"></i>
-          </a>
-
-          <a href="#" class="social-icon si-dribbble si-small si-rounded si-light" title="Dribbble">
-            <i class="icon-dribbble"></i>
-            <i class="icon-dribbble"></i>
-          </a>
-
-          <a href="#" class="social-icon si-flickr si-small si-rounded si-light" title="Flickr">
-            <i class="icon-flickr"></i>
-            <i class="icon-flickr"></i>
-          </a>
-
-          <a href="#" class="social-icon si-linkedin si-small si-rounded si-light" title="LinkedIn">
-            <i class="icon-linkedin"></i>
-            <i class="icon-linkedin"></i>
-          </a>
-
-          <a href="#" class="social-icon si-twitter si-small si-rounded si-light" title="Twitter">
-            <i class="icon-twitter"></i>
-            <i class="icon-twitter"></i>
-          </a> -->
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- #content end -->
-
-<script>
-  jQuery("#tabs-profile").on("tabsactivate", function (event, ui) {
-    jQuery('.flexslider .slide').resize();
-  });
-</script>
+	</div><!-- #wrapper end -->
